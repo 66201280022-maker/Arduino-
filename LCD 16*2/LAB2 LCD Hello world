@@ -1,0 +1,28 @@
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+
+// ประกาศ lcd ไว้ตรงนี้ ต้องอยู่นอก setup/loop
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+
+void setup() {
+  lcd.init();        // เริ่มต้นจอ
+  lcd.backlight();   // เปิดไฟพื้นหลัง
+
+  lcd.setCursor(0, 0);
+  lcd.print("Lab2 Hello world");
+
+  lcd.setCursor(0, 1);
+  lcd.print("Sangtum");
+  delay(2000);
+}
+
+void loop() {
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print("Hello world");
+  lcd.setCursor(0, 1);
+  lcd.print("Sangtum");
+  
+
+  delay(1000);
+}
